@@ -68,5 +68,6 @@ https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={par
 | `lat` | `string` | **Required**. Your city name |
 | `lon` | `string` | **Required**. Your city name |
 
+## Documentation
 
 [Documentation](https://github.com/mashood100/weather-app/wiki/Documentation)
