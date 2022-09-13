@@ -102,7 +102,6 @@ class _DayOrNigthTemp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenHeigth = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
     return Column(
       children: [
         Padding(

@@ -1,8 +1,5 @@
 import 'package:apis/modules/search/controller/search_screen_controller.dart';
-import 'package:apis/data/tour.dart';
-import 'package:apis/modules/current%20weather/view/current_weather_screen.dart';
 import 'package:apis/modules/search/view/widgets/all_tour_result.dart';
-
 import 'package:apis/modules/search/view/widgets/noresultfound.dart';
 import 'package:apis/modules/search/view/widgets/search_feild.dart';
 import 'package:flutter/material.dart';
