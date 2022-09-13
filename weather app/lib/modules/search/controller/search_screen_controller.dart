@@ -4,9 +4,12 @@ import 'package:get/get.dart';
 class SearchScreenController extends GetxController {
   List<Tour> listOfTours = allTours;
 
-  cancelSearch() {}
+  cancelSearch() {
+    Get.back();
+  }
 
   void searchTour(String qurey) {
+    // update new list by .where function
     final suggestions = allTours.where((tour) {
       final tourTitle = tour.title.toLowerCase();
       final input = qurey.toLowerCase();
@@ -15,7 +18,7 @@ class SearchScreenController extends GetxController {
     }).toList();
 
     listOfTours = suggestions;
-
+// work as a set state to
     update();
   }
 }

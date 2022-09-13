@@ -40,7 +40,7 @@ class SearchFeild extends StatelessWidget {
               height: screenHeigth * 0.1,
               child: IconButton(
                 onPressed: () {
-                  Get.back();
+                  screenController.cancelSearch();
                 },
                 icon: Icon(
                   Icons.cancel_sharp,

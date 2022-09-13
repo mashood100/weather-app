@@ -9,9 +9,13 @@ import 'package:shared_preferences/shared_preferences.dart';
 late SharedPreferences sharedPreferences;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  //Load APIkey from .env file
   await dotenv.load(fileName: "assets/config/.env");
+  // initilized SharedPreferences
   sharedPreferences = await SharedPreferences.getInstance();
+  //initilized App services
   await initServices();
-  await LocalStorage().saveAppData();
+  //Save data from the the API in the Local Database
+  LocalStorage().saveAppData();
   runApp(const MyApp());
 }

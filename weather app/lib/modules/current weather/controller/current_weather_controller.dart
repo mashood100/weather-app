@@ -10,17 +10,24 @@ import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 class CurrentWeatherController extends GetxService {
   String accessToken = dotenv.env['API_KEY']!;
+//-------------------------------------------------------------------------->
+//the function checks if the internet connection is available the fetch data from the API
+// If not then check is data availabele in the local storage
+//if data is not availabele then It will return null
+
   Future<CurrentWeatherModel?> weatherData(Tour tourDetail) async {
     if (await InternetConnectionChecker().hasConnection) {
       return getCityDataFromAPI(tourDetail.city);
     } else if (LocalStorage().isForcasteAvailable &&
         LocalStorage().isWeatherAvailable) {
-      return LocalStorage.getCityWeatherFromStorage(tourDetail.city);
+      return LocalStorage.getWeatherDataFromStorage(tourDetail.city);
     } else {
       return null;
     }
   }
 
+//-------------------------------------------------------------------------->
+//the function Fetch live data from the API and also updates the Local database
   Future<CurrentWeatherModel> getCityDataFromAPI(String cityname) async {
     final response = await http.get(Uri.parse(
         "https://api.openweathermap.org/data/2.5/weather?q=$cityname&appid=$accessToken"));

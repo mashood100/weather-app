@@ -11,6 +11,7 @@ import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:http/http.dart' as http;
 
 class LocalStorage {
+  // saving bool values into the app database so the app will load data for the first time only
   bool isForcasteAvailable =
       sharedPreferences.getBool("isForcasteAvailable") ?? false;
   bool isWeatherAvailable =
@@ -19,13 +20,18 @@ class LocalStorage {
     if (isForcasteAvailable && isWeatherAvailable) {
       // do nothing
     } else {
+      Fluttertoast.showToast(msg: "This may take a while");
+      // save Data from the Weather API into the Loacal Database
       _saveAllWeatherData();
+
+      // save Data from the Forcase API into the Loacal Database
+
       _saveAllForcastData();
     }
   }
 
 //---------------------------------------------------------------------------------------------->
-  static Future<SevenDayForcastModel> geyForcastFromStorage(
+  static Future<SevenDayForcastModel> getForcastFromStorage(
       Tour tourDetail) async {
     var _dataFromStorage =
         sharedPreferences.getString("forcast-${tourDetail.city}");
@@ -34,7 +40,7 @@ class LocalStorage {
   }
 
 //---------------------------------------------------------------------------------------------->
-  static Future<CurrentWeatherModel> getCityWeatherFromStorage(
+  static Future<CurrentWeatherModel> getWeatherDataFromStorage(
       String cityName) async {
     var dataFromStorage = sharedPreferences.getString("weather-$cityName");
 
@@ -50,16 +56,14 @@ class LocalStorage {
             "https://api.openweathermap.org/data/2.5/onecall?lat=${tour.latLon["lat"]}&lon=${tour.latLon["lon"]}&exclude=hourly,minutely,current&appid=$accessToken"));
 
         if (response.statusCode == 200) {
-          //update database
+          //update response data into the local storage
           await sharedPreferences.setString(
               "forcast-${tour.city}", response.body);
         } else {
-          inspect("failed to update ${tour.city} ");
           Fluttertoast.showToast(msg: "Failed to update cities forcaste");
         }
       }
       //// set true so we dont need to load from everytime we fetch data from the API
-
       await sharedPreferences.setBool("isForcasteAvailable", true);
     } else {
       Fluttertoast.showToast(

@@ -10,21 +10,21 @@ import 'package:get/get.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 class SevenDayForcasteService extends GetxService {
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
   String accessToken = dotenv.env['API_KEY']!;
-
+//-------------------------------------------------------------------------->
+//the function checks if the internet connection is available the fetch data from the API
+// If not then check is data availabele in the local storage
+//if data is not availabele then It will return null
   Future<SevenDayForcastModel> forCasteData(Tour tourDetail) async {
     if (await InternetConnectionChecker().hasConnection) {
       return getForcastFromAPI(tourDetail);
     } else {
-      return LocalStorage.geyForcastFromStorage(tourDetail);
+      return LocalStorage.getForcastFromStorage(tourDetail);
     }
   }
 
+//-------------------------------------------------------------------------->
+//the function Fetch live data from the API and also updates the Local database
   Future<SevenDayForcastModel> getForcastFromAPI(Tour tourDetail) async {
     final response = await http.get(Uri.parse(
         "https://api.openweathermap.org/data/2.5/onecall?lat=${tourDetail.latLon["lat"]}&lon=${tourDetail.latLon["lon"]}&exclude=hourly,minutely,current&appid=$accessToken"));
