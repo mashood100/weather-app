@@ -3,6 +3,7 @@ import 'package:apis/utlies/all_service_intilizer.dart';
 
 import 'package:apis/utlies/my_app.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -17,5 +18,7 @@ Future<void> main() async {
   await initServices();
   //Save data from the the API in the Local Database
   LocalStorage().saveAppData();
-  runApp(const MyApp());
+  //set orientation
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((value) => runApp(const MyApp()));
 }
