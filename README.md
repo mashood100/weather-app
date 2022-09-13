@@ -1,5 +1,3 @@
-
-
 # Weather App with Flutter
 With this app its so easy to receive the weather 
 conditions in your current location.
@@ -28,6 +26,9 @@ this app provides detailed local forecast
 | Getx | [ get: 4.3.8](https://pub.dev/packages/get) 
 | https | [ http 0.13.4](https://pub.dev/packages/http) 
 | flutter_spinkit | [ flutter_spinkit: 5.1.0](https://pub.dev/packages/flutter_spinkit) 
+| shared_preferences | [ shared_preferences: ^2.0.15](https://pub.dev/packages/shared_preferences) 
+| flutter_dotenv | [ flutter_dotenv: ^5.0.2](https://pub.dev/packages/flutter_dotenv) 
+| internet_connection_checker | [ internet_connection_checker: ^0.0.1+4](https://pub.dev/packages/internet_connection_checker/install) 
 
 ## App Demo
 <p align="center">
@@ -35,15 +36,10 @@ this app provides detailed local forecast
    <img src="https://github.com/mashood100/weather-app-with-flutter/blob/master/images/ss2.jpg" width="240" title="hover text"> </p>
  
  <p align="center"> 
- <img src="https://github.com/mashood100/weather-app-with-flutter/blob/master/images/ss3.jpg" width="240" title="hover text">
+  <img src="https://github.com/mashood100/weather-app-with-flutter/blob/master/images/ss5.jpg" width="240" title="hover text">
    <img src="https://github.com/mashood100/weather-app-with-flutter/blob/master/images/ss4.jpg"  width="240" title="hover text">
  </p>
- <p align="center">
-   <img src="https://github.com/mashood100/weather-app-with-flutter/blob/master/images/ss5.jpg" width="240" title="hover text">
- <img src="https://github.com/mashood100/weather-app-with-flutter/blob/master/images/ss6.jpg" width="240" title="hover text">
-  
- 
-</p>
+
 
 ## API Reference
 
@@ -71,3 +67,6 @@ https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={par
 | `api_key` | `string` | **Required**. Your custom API key |
 | `lat` | `string` | **Required**. Your city name |
 | `lon` | `string` | **Required**. Your city name |
+
+
+[Documentation](https://github.com/mashood100/weather-app/wiki/Documentation)
