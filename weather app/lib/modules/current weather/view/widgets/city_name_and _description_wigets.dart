@@ -1,4 +1,5 @@
 // ignore_for_file: file_names
+import 'package:apis/constants/color_constant.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class CityName extends StatelessWidget {
           left: MediaQuery.of(context).size.width * 0.1),
       child: AutoSizeText(
         name ?? "N/A",
-        style: const TextStyle(color: Colors.white, fontSize: 32),
+        style: TextStyle(color: AppColors.myTextColor, fontSize: 32),
       ),
     );
   }
@@ -32,8 +33,10 @@ class WeatherDiscription extends StatelessWidget {
           left: MediaQuery.of(context).size.width * 0.039),
       child: AutoSizeText(
         description ?? "N/A",
-        style: const TextStyle(
-            fontWeight: FontWeight.w300, fontSize: 22, color: Colors.white),
+        style: TextStyle(
+            fontWeight: FontWeight.w300,
+            fontSize: 22,
+            color: AppColors.myTextColor),
       ),
     );
   }

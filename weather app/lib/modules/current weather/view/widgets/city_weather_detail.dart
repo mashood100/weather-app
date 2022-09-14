@@ -1,3 +1,5 @@
+import 'package:apis/constants/color_constant.dart';
+import 'package:apis/constants/weather_icons.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
@@ -17,16 +19,20 @@ class CityWeatherDetail extends StatelessWidget {
             temperature == null
                 ? "N/A"
                 : (temperature! - 273.0).toStringAsFixed(0),
-            style: const TextStyle(
-                fontWeight: FontWeight.w300, color: Colors.white, fontSize: 52),
+            style: TextStyle(
+                fontWeight: FontWeight.w300,
+                color: AppColors.myTextColor,
+                fontSize: 52),
           ),
           const SizedBox(
             width: 7,
           ),
-          const AutoSizeText(
+          AutoSizeText(
             "\u2103",
             style: TextStyle(
-                fontWeight: FontWeight.w200, color: Colors.white, fontSize: 52),
+                fontWeight: FontWeight.w200,
+                color: AppColors.myTextColor,
+                fontSize: 52),
           ),
           const SizedBox(
             width: 12,
@@ -47,17 +53,17 @@ class WeatherIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (weatherCondition == "haze") {
-      return const _Icon(iconPath: "assets/ihaze.png");
+      return _Icon(iconPath: WeatherIcons.hazeIcon);
     } else if (weatherCondition == "smoke") {
-      return const _Icon(iconPath: "assets/ismoke.png");
+      return _Icon(iconPath: WeatherIcons.smokeIcon);
     } else if (weatherCondition == "mist") {
-      return const _Icon(iconPath: "assets/imist.png");
+      return _Icon(iconPath: WeatherIcons.mistIcon);
     } else if (weatherCondition == "clear") {
-      return const _Icon(iconPath: "assets/iclear.png");
+      return _Icon(iconPath: WeatherIcons.clearIcon);
     } else if (weatherCondition == "clouds") {
-      return const _Icon(iconPath: "assets/icloud.png");
+      return _Icon(iconPath: WeatherIcons.cloudIcon);
     } else {
-      return const _Icon(iconPath: "assets/else.png");
+      return _Icon(iconPath: WeatherIcons.gernalIcon);
     }
   }
 }

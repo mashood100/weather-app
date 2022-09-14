@@ -1,3 +1,4 @@
+import 'package:apis/constants/color_constant.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
@@ -69,7 +70,7 @@ class _DetailCard extends StatelessWidget {
             child: AutoSizeText(
               title,
               style: TextStyle(
-                  color: Colors.white.withOpacity(0.9),
+                  color: AppColors.myTextColor,
                   fontWeight: FontWeight.w300,
                   fontSize: 14),
             ),
@@ -87,8 +88,8 @@ class _DetailCard extends StatelessWidget {
                 top: screenHeigth * 0.015, left: screenWidth * 0.025),
             child: AutoSizeText(
               "$value",
-              style: const TextStyle(
-                  color: Colors.white,
+              style: TextStyle(
+                  color: AppColors.myTextColor,
                   fontSize: 22,
                   fontWeight: FontWeight.w300),
             ),

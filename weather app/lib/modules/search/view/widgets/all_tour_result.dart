@@ -1,3 +1,4 @@
+import 'package:apis/constants/color_constant.dart';
 import 'package:apis/data/tour.dart';
 import 'package:apis/modules/current%20weather/view/current_weather_screen.dart';
 import 'package:flutter/material.dart';
@@ -42,12 +43,12 @@ class _EachCityResultTile extends StatelessWidget {
       },
       child: ListTile(
         title: Text(tourDetails.title,
-            style: TextStyle(color: Colors.white.withOpacity(0.8))),
+            style: TextStyle(color: AppColors.myTextColor.withOpacity(0.8))),
         subtitle: Padding(
           padding: const EdgeInsets.only(top: 5.0),
           child: Text(
             tourDetails.country,
-            style: TextStyle(color: Colors.white.withOpacity(0.6)),
+            style: TextStyle(color: AppColors.myTextColor.withOpacity(0.6)),
           ),
         ),
         trailing: Icon(

@@ -1,3 +1,4 @@
+import 'package:apis/constants/color_constant.dart';
 import 'package:apis/data/tour.dart';
 import 'package:apis/modules/sevenday%20forcaste/view/seven_day_forcaste_screen.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -37,13 +38,13 @@ class SevenDayForcasteButton extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(top: _screenHeigth * 0.075),
-            child: const Center(
+            child: Center(
               child: AutoSizeText(
                 "7 day Forcaste",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontWeight: FontWeight.w200,
-                  color: Colors.white,
+                  color: AppColors.myTextColor,
                   fontSize: 20,
                 ),
               ),

@@ -1,4 +1,4 @@
-import 'package:apis/utlies/ui_constant.dart';
+import 'package:apis/constants/color_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -22,7 +22,7 @@ class Loading extends StatelessWidget {
               style: TextStyle(
                   fontWeight: FontWeight.w400,
                   fontSize: 16,
-                  color: Colors.white.withOpacity(0.9)),
+                  color: AppColors.myTextColor.withOpacity(0.9)),
             ),
           )
         ],

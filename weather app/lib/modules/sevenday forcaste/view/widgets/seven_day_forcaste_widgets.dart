@@ -1,3 +1,5 @@
+import 'package:apis/constants/color_constant.dart';
+import 'package:apis/constants/weather_icons.dart';
 import 'package:flutter/material.dart';
 
 class EachDayCard extends StatelessWidget {
@@ -40,7 +42,7 @@ class EachDayCard extends StatelessWidget {
             child: Text(
               "${index + 1} day later",
               style: TextStyle(
-                  color: Colors.white.withOpacity(0.6),
+                  color: AppColors.myTextColor.withOpacity(0.6),
                   fontSize: 22,
                   fontWeight: FontWeight.w300),
             ),
@@ -107,7 +109,7 @@ class _DayOrNigthTemp extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(vertical: screenHeigth * 0.022),
           child: Image.asset(
-            isDay ? "assets/iclear.png" : "assets/moon.png",
+            isDay ? WeatherIcons.clearIcon : WeatherIcons.moonIcon,
             height: screenHeigth * 0.04,
             fit: BoxFit.cover,
           ),
@@ -116,14 +118,18 @@ class _DayOrNigthTemp extends StatelessWidget {
           padding: EdgeInsets.only(bottom: screenHeigth * 0.020),
           child: Text(
             isDay ? "Day time" : "Nigth time",
-            style: const TextStyle(
-                color: Colors.white, fontSize: 11, fontWeight: FontWeight.w300),
+            style: TextStyle(
+                color: AppColors.myTextColor,
+                fontSize: 11,
+                fontWeight: FontWeight.w300),
           ),
         ),
         Text(
           "${temperature == null ? "N/A" : (temperature! - 273.0).toStringAsFixed(0)} \u2103",
-          style: const TextStyle(
-              color: Colors.white, fontSize: 28, fontWeight: FontWeight.w200),
+          style: TextStyle(
+              color: AppColors.myTextColor,
+              fontSize: 28,
+              fontWeight: FontWeight.w200),
         ),
         Container(
           margin:
@@ -161,8 +167,10 @@ class _SubDetails extends StatelessWidget {
         ),
         Text(
           "$title: ${value ?? "N/A"} ",
-          style: const TextStyle(
-              color: Colors.white, fontSize: 11, fontWeight: FontWeight.w200),
+          style: TextStyle(
+              color: AppColors.myTextColor,
+              fontSize: 11,
+              fontWeight: FontWeight.w200),
         ),
       ],
     );

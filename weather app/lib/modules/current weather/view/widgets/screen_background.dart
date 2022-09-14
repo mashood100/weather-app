@@ -1,3 +1,4 @@
+import 'package:apis/constants/background_images.dart';
 import 'package:flutter/material.dart';
 
 class ScreenBackground extends StatelessWidget {
@@ -8,17 +9,17 @@ class ScreenBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (weatherType == "haze") {
-      return _buildBackgroundImage(imagePath: "assets/haze.jpg");
+      return _buildBackgroundImage(imagePath: BackgroundImages.haze);
     } else if (weatherType == "smoke") {
-      return _buildBackgroundImage(imagePath: "assets/smoke.jpg");
+      return _buildBackgroundImage(imagePath: BackgroundImages.smoke);
     } else if (weatherType == "mist") {
-      return _buildBackgroundImage(imagePath: "assets/mist.jpg");
+      return _buildBackgroundImage(imagePath: BackgroundImages.mist);
     } else if (weatherType == "clear") {
-      return _buildBackgroundImage(imagePath: "assets/clear.jpg");
+      return _buildBackgroundImage(imagePath: BackgroundImages.clear);
     } else if (weatherType == "clouds") {
-      return _buildBackgroundImage(imagePath: "assets/cloud.jpg");
+      return _buildBackgroundImage(imagePath: BackgroundImages.clouds);
     } else {
-      return _buildBackgroundImage(imagePath: "assets/night.jpg");
+      return _buildBackgroundImage(imagePath: BackgroundImages.gernal);
     }
   }
 }

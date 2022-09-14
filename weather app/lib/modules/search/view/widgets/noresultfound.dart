@@ -1,3 +1,4 @@
+import 'package:apis/constants/color_constant.dart';
 import 'package:flutter/material.dart';
 
 class NoResultFound extends StatefulWidget {
@@ -18,8 +19,8 @@ class _NoResultFoundState extends State<NoResultFound> {
           ),
           Text(
             "Oops..!",
-            style:
-                TextStyle(fontSize: 26, color: Colors.white.withOpacity(0.6)),
+            style: TextStyle(
+                fontSize: 26, color: AppColors.myTextColor.withOpacity(0.6)),
           ),
           const SizedBox(
             height: 22,
@@ -43,7 +44,8 @@ class _NoResultFoundState extends State<NoResultFound> {
                 "We can't find a city you are looking for maybe a little spelling mistake?",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    fontSize: 16, color: Colors.white.withOpacity(0.7)),
+                    fontSize: 16,
+                    color: AppColors.myTextColor.withOpacity(0.7)),
               ))
         ],
       ),

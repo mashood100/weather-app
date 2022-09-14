@@ -1,7 +1,7 @@
+import 'package:apis/constants/color_constant.dart';
 import 'package:apis/data/tour.dart';
 import 'package:apis/modules/sevenday%20forcaste/controller/seven_day_forcast_services.dart';
 import 'package:apis/modules/sevenday%20forcaste/model/seven_day_forcast_model.dart';
-import 'package:apis/utlies/ui_constant.dart';
 import 'package:apis/utlies/widgets/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -50,9 +50,9 @@ class _SevenDayForcasteScreenState extends State<SevenDayForcasteScreen> {
                     margin: const EdgeInsets.fromLTRB(0, 22, 00, 0),
                     child: Text(
                       "7 day forcaste of ${tourDetail.title} ",
-                      style: const TextStyle(
+                      style: TextStyle(
                           fontWeight: FontWeight.w200,
-                          color: Colors.white,
+                          color: AppColors.myTextColor,
                           fontSize: 25),
                     ),
                   ),
