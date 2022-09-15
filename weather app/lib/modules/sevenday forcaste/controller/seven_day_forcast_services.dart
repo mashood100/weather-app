@@ -5,7 +5,6 @@ import 'package:apis/data/tour.dart';
 import 'package:apis/modules/sevenday%20forcaste/model/seven_day_forcast_model.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
-
 import 'package:get/get.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 

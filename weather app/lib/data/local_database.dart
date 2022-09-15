@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'dart:developer';
-
 import 'package:apis/main.dart';
 import 'package:apis/modules/current%20weather/model/current_weather_model.dart';
 import 'package:apis/modules/sevenday%20forcaste/model/seven_day_forcast_model.dart';

@@ -43,6 +43,8 @@ dependencies:
   internet_connection_checker: ^0.0.1+4
 
 dev_dependencies:
+  mockito: ^5.3.1
+  build_runner: ^2.2.1
   flutter_test:
     sdk: flutter
   flutter_driver:
