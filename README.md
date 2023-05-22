@@ -1,4 +1,4 @@
-# Weather App with Flutter
+# Weather App with Flutter for beginner tutorial
 With this app its so easy to receive the weather 
 conditions in your current location.
 this app provides detailed local forecast
